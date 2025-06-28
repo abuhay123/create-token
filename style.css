@@ -103,6 +103,7 @@ main p {
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  animation: coinDance 2.2s infinite ease-in-out; /* ✅ אנימציה למטבעות */
 }
 
 .wallet-info {
@@ -131,6 +132,7 @@ main p {
   font-size: 24px;
   cursor: pointer;
   box-shadow: 0 0 10px #2563eb88;
+  animation: bounce-strong 1s infinite ease-in-out; /* ✅ קפיצה חזקה יותר */
 }
 
 .ai-popup {
@@ -168,4 +170,64 @@ main p {
 .ai-popup #aiResponse {
   margin-top: 10px;
   color: #cbd5e1;
+}
+
+/* ✅ תפריט צד חלק - תוספת */
+#menu {
+  position: fixed;
+  top: 0;
+  right: -300px; /* מוסתר בהתחלה */
+  width: 260px;
+  height: 100%;
+  background-color: #1c1f30;
+  transition: right 0.4s ease;
+  z-index: 999;
+}
+
+#menu.open {
+  right: 0;
+}
+
+/* כפתור סגירה אופציונלי */
+#closeMenu {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ✅ אנימציות */
+@keyframes bounce-strong {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-18px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  75% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes coinDance {
+  0% {
+    transform: rotate(0deg) translateY(0);
+  }
+  25% {
+    transform: rotate(5deg) translateY(-5px);
+  }
+  50% {
+    transform: rotate(0deg) translateY(0);
+  }
+  75% {
+    transform: rotate(-5deg) translateY(5px);
+  }
+  100% {
+    transform: rotate(0deg) translateY(0);
+  }
 }
