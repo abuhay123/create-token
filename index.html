@@ -2,17 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crypto Owner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CryptoAbuhay</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#000000" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="CryptoAbuhay" />
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="icon" href="icon.png">
   <link rel="stylesheet" href="style.css" />
+  <script src="libs/bip39.min.js"></script>
+  <script src="libs/solana-web3.min.js"></script>
 </head>
 <body>
-  <div class="animated-bar">It's time to have your own crypto</div>
-
   <div class="container">
-    <img src="logo.png" alt="Logo" class="logo" />
-    <h1>Crypto Owner</h1>
-    <button class="main-button" onclick="alert('Coming soon...')">Create Token</button>
+    <header>
+      <img src="icon.png" alt="CryptoAbuhay Logo" class="logo" />
+      <h1>CryptoAbuhay</h1>
+    </header>
+
+    <main>
+      <h2>Your gateway to Solana</h2>
+      <p>Securely manage your Solana assets and tokens.</p>
+
+      <button onclick="createWallet()" class="btn primary">Create a new wallet</button>
+      <button onclick="importWallet()" class="btn secondary">I already have a wallet</button>
+
+      <div class="tokens">
+        <h3>Tokens</h3>
+        <ul>
+          <li><img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="SOL"> SOL</li>
+          <li><img src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png" alt="USDC"> USDC</li>
+          <li><img src="https://cryptologos.cc/logos/tether-usdt-logo.png" alt="USDT"> USDT</li>
+        </ul>
+      </div>
+    </main>
+
+    <div id="walletData" class="wallet-info hidden"></div>
+
+    <button class="ai-helper" onclick="toggleAI()">
+      😊
+    </button>
+
+    <div id="aiPopup" class="ai-popup hidden">
+      <input id="aiInput" placeholder="Ask me anything..." />
+      <button onclick="askAI()">Ask</button>
+      <div id="aiResponse"></div>
+    </div>
   </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
