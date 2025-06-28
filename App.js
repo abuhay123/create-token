@@ -74,3 +74,41 @@ async function askAI() {
 function toggleAI() {
   document.getElementById("aiPopup").classList.toggle("hidden");
 }
+
+
+// ✅ === תוספת: שינוי שפה בזמן אמת ===
+const translations = {
+  en: {
+    title: "Create your wallet",
+    createBtn: "Create a new wallet",
+    importBtn: "I already have a wallet",
+    aiPlaceholder: "Ask the assistant...",
+    aiSend: "Send"
+  },
+  he: {
+    title: "צור את הארנק שלך",
+    createBtn: "צור ארנק חדש",
+    importBtn: "כבר יש לי ארנק",
+    aiPlaceholder: "שאל את העוזר...",
+    aiSend: "שלח"
+  }
+};
+
+let currentLang = "en";
+
+function toggleLanguage() {
+  currentLang = currentLang === "en" ? "he" : "en";
+  applyTranslations(currentLang);
+}
+
+function applyTranslations(lang) {
+  const t = translations[lang];
+  const $ = id => document.getElementById(id);
+  if (!t) return;
+
+  if ($("title")) $("title").innerText = t.title;
+  if ($("createWalletBtn")) $("createWalletBtn").innerText = t.createBtn;
+  if ($("existingWalletBtn")) $("existingWalletBtn").innerText = t.importBtn;
+  if ($("aiInput")) $("aiInput").placeholder = t.aiPlaceholder;
+  if ($("aiSendBtn")) $("aiSendBtn").innerText = t.aiSend;
+}
