@@ -1,5 +1,3 @@
-// app.js
-
 const walletDiv = document.getElementById("walletData");
 let connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl("mainnet-beta"));
 let wallet = null;
