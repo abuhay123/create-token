@@ -7,6 +7,8 @@
   "background_color": "#000000",
   "theme_color": "#0c0f1c",
   "orientation": "portrait",
+  "lang": "en",
+  "dir": "ltr",
   "icons": [
     {
       "src": "icon.png",
@@ -17,6 +19,21 @@
       "src": "icon.png",
       "sizes": "512x512",
       "type": "image/png"
+    }
+  ],
+  "related_applications": [],
+  "shortcuts": [
+    {
+      "name": "Switch to Hebrew",
+      "short_name": "עברית",
+      "description": "העבר את הממשק לעברית",
+      "url": "/?lang=he"
+    },
+    {
+      "name": "Switch to English",
+      "short_name": "English",
+      "description": "Switch interface to English",
+      "url": "/?lang=en"
     }
   ]
 }
