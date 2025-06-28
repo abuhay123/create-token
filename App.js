@@ -26,8 +26,8 @@ async function importWallet() {
 async function displayWallet(mnemonic) {
   const pubKey = wallet.publicKey.toBase58();
   const solBalance = await connection.getBalance(wallet.publicKey);
-  const usdcBalance = await getTokenBalance(wallet.publicKey, "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"); // USDC
-  const usdtBalance = await getTokenBalance(wallet.publicKey, "Es9vMFrzaCER1zQh5jBvzr6KFh4zLKHMQ9ZH8ZujZwv8"); // USDT
+  const usdcBalance = await getTokenBalance(wallet.publicKey, "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v");
+  const usdtBalance = await getTokenBalance(wallet.publicKey, "Es9vMFrzaCER1zQh5jBvzr6KFh4zLKHMQ9ZH8ZujZwv8");
 
   walletDiv.innerHTML = `
     <b>Public Key:</b><br>${pubKey}<br><br>
@@ -46,8 +46,7 @@ async function getTokenBalance(pubKey, tokenMint) {
       mint: new solanaWeb3.PublicKey(tokenMint),
     });
 
-    const amount =
-      accounts.value[0]?.account?.data?.parsed?.info?.tokenAmount?.uiAmount || 0;
+    const amount = accounts.value[0]?.account?.data?.parsed?.info?.tokenAmount?.uiAmount || 0;
     return amount.toFixed(2);
   } catch (e) {
     return "0.00";
@@ -73,8 +72,7 @@ function toggleAI() {
   document.getElementById("aiPopup").classList.toggle("hidden");
 }
 
-
-// ✅ === תוספת: שינוי שפה בזמן אמת ===
+// תרגום ממשק
 const translations = {
   en: {
     title: "Create your wallet",
