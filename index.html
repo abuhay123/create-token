@@ -19,15 +19,15 @@
   <div class="container">
     <header>
       <img src="icon.png" alt="CryptoAbuhay Logo" class="logo" />
-      <h1>CryptoAbuhay</h1>
+      <h1 id="title">Create your wallet</h1>
     </header>
 
     <main>
       <h2>Your gateway to Solana</h2>
       <p>Securely manage your Solana assets and tokens.</p>
 
-      <button onclick="createWallet()" class="btn primary">Create a new wallet</button>
-      <button onclick="importWallet()" class="btn secondary">I already have a wallet</button>
+      <button id="createWalletBtn" class="btn primary" onclick="createWallet()">Create a new wallet</button>
+      <button id="existingWalletBtn" class="btn secondary" onclick="importWallet()">I already have a wallet</button>
 
       <div class="tokens">
         <h3>Tokens</h3>
@@ -37,40 +37,26 @@
           <li><img src="https://cryptologos.cc/logos/tether-usdt-logo.png" alt="USDT"> USDT</li>
         </ul>
       </div>
+
+      <div id="walletData" class="wallet-info hidden"></div>
+
+      <!-- כפתור עוזר AI -->
+      <button class="ai-helper" onclick="toggleAI()">😊</button>
+
+      <!-- פופאפ עוזר AI -->
+      <div id="aiPopup" class="ai-popup hidden">
+        <input id="aiInput" type="text" placeholder="Ask the assistant...">
+        <button id="aiSendBtn" onclick="askAI()">Send</button>
+        <div id="aiResponse"></div>
+      </div>
+
+      <!-- כפתור שינוי שפה -->
+      <div style="text-align: center; margin-top: 20px;">
+        <button onclick="toggleLanguage()" class="btn secondary">🌐 Switch Language</button>
+      </div>
     </main>
-
-    <div id="walletData" class="wallet-info hidden"></div>
-
-    <button class="ai-helper" onclick="toggleAI()">
-      😊
-    </button>
-
-    <div id="aiPopup" class="ai-popup hidden">
-      <input id="aiInput" placeholder="Ask me anything..." />
-      <button onclick="askAI()">Ask</button>
-      <div id="aiResponse"></div>
-    </div>
   </div>
-<h1 id="title">Create your wallet</h1>
 
-<button id="createWalletBtn" class="btn primary" onclick="createWallet()">
-  Create a new wallet
-</button>
-
-<button id="existingWalletBtn" class="btn secondary" onclick="importWallet()">
-  I already have a wallet
-</button>
-
-<div class="ai-popup hidden" id="aiPopup">
-  <input id="aiInput" type="text" placeholder="Ask the assistant...">
-  <button id="aiSendBtn" onclick="askAI()">Send</button>
-  <div id="aiResponse"></div>
-</div>
-
-<!-- 🔁 כפתור שינוי שפה -->
-<div style="text-align: center; margin-top: 20px;">
-  <button onclick="toggleLanguage()" class="btn secondary">🌐 Switch Language</button>
-</div>
   <script src="app.js"></script>
 </body>
 </html>
