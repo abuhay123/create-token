@@ -1,44 +1,171 @@
+/* style.css */
+
 body {
   margin: 0;
-  background-color: black;
-  color: white;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0c0f1c;
+  color: #ffffff;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-}
-
-.animated-bar {
-  width: 100%;
-  background-color: #6a0dad;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  font-size: 1.2em;
-  animation: slide 10s linear infinite;
-}
-
-@keyframes slide {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  min-height: 100vh;
 }
 
 .container {
-  margin-top: 50px;
-  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #111729;
+  border-radius: 16px;
+  box-shadow: 0 0 20px #0ff3ff11;
+  position: relative;
 }
 
-.logo {
-  width: 100px;
+header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
-.main-button {
-  background-color: #6a0dad;
-  color: white;
-  padding: 15px 30px;
-  font-size: 20px;
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+main h2 {
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+main p {
+  color: #a0a4b8;
+  margin-bottom: 30px;
+}
+
+.btn {
+  width: 100%;
+  padding: 15px;
   border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.primary {
+  background: linear-gradient(135deg, #3b82f6, #9333ea);
+  color: white;
+}
+
+.primary:hover {
+  opacity: 0.9;
+}
+
+.secondary {
+  background: #1e263a;
+  color: white;
+  border: 1px solid #3b82f6;
+}
+
+.secondary:hover {
+  background-color: #27304b;
+}
+
+.tokens {
+  margin-top: 30px;
+}
+
+.tokens h3 {
+  margin-bottom: 10px;
+}
+
+.tokens ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tokens li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.tokens img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.wallet-info {
+  margin-top: 20px;
+  background: #222b45;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  word-break: break-all;
+}
+
+.hidden {
+  display: none;
+}
+
+.ai-helper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #2563eb88;
+}
+
+.ai-popup {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background: #1e293b;
+  padding: 10px;
+  border-radius: 12px;
+  width: 250px;
+  box-shadow: 0 0 10px #00000066;
+}
+
+.ai-popup input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #334155;
+  color: white;
+}
+
+.ai-popup button {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  background: #3b82f6;
+  color: white;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.ai-popup #aiResponse {
+  margin-top: 10px;
+  color: #cbd5e1;
 }
